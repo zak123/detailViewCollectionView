@@ -16,7 +16,10 @@
 @property NSMutableArray *objects;
 @end
 
-@implementation MasterViewController
+@implementation MasterViewController {
+    UICollectionViewFlowLayout *bigLayout;
+    UICollectionViewFlowLayout *smallLayout;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -24,6 +27,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    bigLayout = [[UICollectionViewFlowLayout alloc] init];
+    smallLayout = [[UICollectionViewFlowLayout alloc] init];
+    
+    smallLayout.itemSize = CGSizeMake(50,50);
+    bigLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    bigLayout.itemSize = CGSizeMake(300,300);
+    
 
     _popSongArray = [[NSMutableArray alloc] init];
     _rockSongArray = [[NSMutableArray alloc] init];
@@ -63,6 +75,29 @@
 
 
 
+- (IBAction)layoutChangePressed:(id)sender {
+    
+    if (self.collectionView.collectionViewLayout != bigLayout) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.navigationItem.leftBarButtonItem.title = @"Small";
+            [self.collectionView setCollectionViewLayout:bigLayout];
+            [self.collectionView layoutIfNeeded];
+        }];
+        
+        
+    }
+    
+    else {
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            self.navigationItem.leftBarButtonItem.title = @"Cover Flow";
+            [self.collectionView setCollectionViewLayout:smallLayout];
+            [self.collectionView layoutIfNeeded];
+        }];
+    
+    
+    }
+}
 
 #pragma mark - Segues
 

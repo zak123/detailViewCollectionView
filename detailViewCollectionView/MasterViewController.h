@@ -10,6 +10,7 @@
 #import "Song.h"
 
 @interface MasterViewController : UICollectionViewController
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *changeView;
 
 @property (nonatomic, strong) NSMutableArray *popSongArray;
 @property (nonatomic, strong) NSMutableArray *rockSongArray;

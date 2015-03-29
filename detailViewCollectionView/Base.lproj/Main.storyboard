@@ -40,7 +40,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSf-Ie-uYa">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSf-Ie-uYa">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
                                     </subviews>
@@ -86,7 +86,16 @@
                             <outlet property="delegate" destination="TYR-Ma-mLD" id="iy3-fm-oT2"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Music" id="2f9-wR-2DN"/>
+                    <navigationItem key="navigationItem" title="Music" id="2f9-wR-2DN">
+                        <barButtonItem key="leftBarButtonItem" title="Cover Flow" id="CRl-Mg-52p">
+                            <connections>
+                                <action selector="layoutChangePressed:" destination="TYR-Ma-mLD" id="QwK-zl-VMD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="changeView" destination="CRl-Mg-52p" id="V5I-54-TOE"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47d-ZW-5gC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
