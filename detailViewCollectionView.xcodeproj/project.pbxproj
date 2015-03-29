@@ -15,6 +15,8 @@
 		B6E345391AC7C99500C8A64B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E345381AC7C99500C8A64B /* Images.xcassets */; };
 		B6E3453C1AC7C99500C8A64B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E3453A1AC7C99500C8A64B /* LaunchScreen.xib */; };
 		B6E345481AC7C99500C8A64B /* detailViewCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E345471AC7C99500C8A64B /* detailViewCollectionViewTests.m */; };
+		B6E345531AC7CA7800C8A64B /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E345521AC7CA7800C8A64B /* Song.m */; };
+		B6E345561AC7D14F00C8A64B /* SongCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E345551AC7D14F00C8A64B /* SongCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		B6E345411AC7C99500C8A64B /* detailViewCollectionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = detailViewCollectionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E345461AC7C99500C8A64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6E345471AC7C99500C8A64B /* detailViewCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = detailViewCollectionViewTests.m; sourceTree = "<group>"; };
+		B6E345511AC7CA7800C8A64B /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		B6E345521AC7CA7800C8A64B /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		B6E345541AC7D14F00C8A64B /* SongCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCollectionViewCell.h; sourceTree = "<group>"; };
+		B6E345551AC7D14F00C8A64B /* SongCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				B6E3452D1AC7C99500C8A64B /* AppDelegate.m */,
 				B6E3452F1AC7C99500C8A64B /* MasterViewController.h */,
 				B6E345301AC7C99500C8A64B /* MasterViewController.m */,
+				B6E345541AC7D14F00C8A64B /* SongCollectionViewCell.h */,
+				B6E345551AC7D14F00C8A64B /* SongCollectionViewCell.m */,
+				B6E345511AC7CA7800C8A64B /* Song.h */,
+				B6E345521AC7CA7800C8A64B /* Song.m */,
 				B6E345321AC7C99500C8A64B /* DetailViewController.h */,
 				B6E345331AC7C99500C8A64B /* DetailViewController.m */,
 				B6E345351AC7C99500C8A64B /* Main.storyboard */,
@@ -224,8 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E345531AC7CA7800C8A64B /* Song.m in Sources */,
 				B6E3452E1AC7C99500C8A64B /* AppDelegate.m in Sources */,
 				B6E345311AC7C99500C8A64B /* MasterViewController.m in Sources */,
+				B6E345561AC7D14F00C8A64B /* SongCollectionViewCell.m in Sources */,
 				B6E3452B1AC7C99500C8A64B /* main.m in Sources */,
 				B6E345341AC7C99500C8A64B /* DetailViewController.m in Sources */,
 			);

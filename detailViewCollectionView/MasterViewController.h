@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Song.h"
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UICollectionViewController
+
+@property (nonatomic, strong) NSMutableArray *songArray;
+
+@property (strong, nonatomic) IBOutlet UICollectionViewCell *songsCollectionView;
 
 
 @end
