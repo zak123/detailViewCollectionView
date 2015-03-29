@@ -40,13 +40,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSf-Ie-uYa">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSf-Ie-uYa">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qSf-Ie-uYa" secondAttribute="bottom" id="CQG-3i-krO"/>
+                                    <constraint firstItem="qSf-Ie-uYa" firstAttribute="leading" secondItem="fGh-Wa-qzG" secondAttribute="leading" id="VYA-96-ICf"/>
+                                    <constraint firstItem="qSf-Ie-uYa" firstAttribute="top" secondItem="fGh-Wa-qzG" secondAttribute="top" id="sTk-nF-sj5"/>
+                                    <constraint firstAttribute="trailing" secondItem="qSf-Ie-uYa" secondAttribute="trailing" id="tMg-eI-acH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CQG-3i-krO"/>
+                                        <exclude reference="VYA-96-ICf"/>
+                                        <exclude reference="sTk-nF-sj5"/>
+                                        <exclude reference="tMg-eI-acH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="CQG-3i-krO"/>
+                                        <include reference="VYA-96-ICf"/>
+                                        <include reference="sTk-nF-sj5"/>
+                                        <include reference="tMg-eI-acH"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="cellImageView" destination="qSf-Ie-uYa" id="5Pi-fD-9Nr"/>
                                     <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="9Jb-QL-ny6"/>
