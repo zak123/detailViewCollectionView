@@ -30,6 +30,7 @@
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem title];
         self.detailImageView.image = [self.detailItem image];
+        self.detailArtistLabel.text = [self.detailItem artist];
         
         
     }

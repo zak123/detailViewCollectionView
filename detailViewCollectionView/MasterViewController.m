@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "SongHeaderViewCollectionReusableView.h"
 #import "SongCollectionViewCell.h"
 
 @interface MasterViewController ()
@@ -24,13 +25,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _songArray = [[NSMutableArray alloc] init];
+    _popSongArray = [[NSMutableArray alloc] init];
+    _rockSongArray = [[NSMutableArray alloc] init];
+    _songArray = [[NSArray alloc] init];
     
     Song *song = [[Song alloc] initWithTitle:@"baby" Artist:@"justin bieber" Image:[UIImage imageNamed:@"justin_bieber"]];
-    [_songArray addObject:song];
+    [_popSongArray addObject:song];
     
-    song = [[Song alloc] initWithTitle:@"bad song 2" Artist:@"badartist2" Image:[UIImage imageNamed:@"badimage2"]];
-    [_songArray addObject:song];
+    song = [[Song alloc] initWithTitle:@"bad song 2" Artist:@"badartist2" Image:[UIImage imageNamed:@"badImage2"]];
+    [_popSongArray addObject:song];
+    
+    song = [[Song alloc] initWithTitle:@"rock song 1" Artist:@"rock artist 1" Image:[UIImage imageNamed:@"phish"]];
+    
+    [_rockSongArray addObject:song];
+    
+    _songArray = [NSArray arrayWithObjects:_rockSongArray, _popSongArray, nil];
+    
 
     }
 
@@ -42,18 +52,15 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    Song *song = [self.songArray objectAtIndex:indexPath.row];
+    Song *song = [[self.songArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     SongCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"songCell" forIndexPath:indexPath];
     
     [cell.cellImageView setImage:song.image];
     
-    
     return cell;
 }
--(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    [self performSegueWithIdentifier:@"showDetail" sender:collectionView];
-}
+
 
 
 
@@ -65,7 +72,7 @@
         
         NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] objectAtIndex:0];
         
-        Song *selectedSong = self.songArray[indexPath.row];
+        Song *selectedSong = [[self.songArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         
         detailVC.detailItem = selectedSong;
         
@@ -74,13 +81,40 @@
 }
 
 #pragma mark - Table View
+-(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *reusuableView = nil;
+    NSString *headerText = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        SongHeaderViewCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        
+        if (indexPath.section == 0) {
+            
+            headerText = @"Rock Music";
+            
+        }
+        if (indexPath.section >= 1) {
+            headerText = @"Pop Music";
+        }
+        
+        headerView.title.text = headerText;
+        
+        
+        
+        reusuableView = headerView;
+        
+    }
+    return reusuableView;
+}
+
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.songArray.count;
+    return [[_songArray objectAtIndex:section] count];
 }
 
 
 -(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return [_songArray count];
 }
 
 

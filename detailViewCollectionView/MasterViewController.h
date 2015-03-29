@@ -11,7 +11,9 @@
 
 @interface MasterViewController : UICollectionViewController
 
-@property (nonatomic, strong) NSMutableArray *songArray;
+@property (nonatomic, strong) NSMutableArray *popSongArray;
+@property (nonatomic, strong) NSMutableArray *rockSongArray;
+@property (nonatomic, strong) NSArray *songArray;
 
 @property (strong, nonatomic) IBOutlet UICollectionViewCell *songsCollectionView;
 
