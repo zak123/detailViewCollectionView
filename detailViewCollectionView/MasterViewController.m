@@ -19,6 +19,8 @@
 @implementation MasterViewController {
     UICollectionViewFlowLayout *bigLayout;
     UICollectionViewFlowLayout *smallLayout;
+    UICollectionReusableView *reusuableView;
+    NSString *headerText;
 }
 
 - (void)awakeFromNib {
@@ -31,9 +33,12 @@
     bigLayout = [[UICollectionViewFlowLayout alloc] init];
     smallLayout = [[UICollectionViewFlowLayout alloc] init];
     
-    smallLayout.itemSize = CGSizeMake(50,50);
-    bigLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
+    // Small 
+    smallLayout.itemSize = CGSizeMake(100,100);
+    smallLayout.headerReferenceSize = CGSizeMake(100, 50);
+
+    bigLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     bigLayout.itemSize = CGSizeMake(300,300);
     
 
@@ -49,6 +54,9 @@
     
     song = [[Song alloc] initWithTitle:@"rock song 1" Artist:@"rock artist 1" Image:[UIImage imageNamed:@"phish"]];
     
+    [_rockSongArray addObject:song];
+    
+    song = [[Song alloc] initWithTitle:@"rock song 2" Artist:@"rock artist 2" Image:[UIImage imageNamed:@"badImage2"]];
     [_rockSongArray addObject:song];
     
     _songArray = [NSArray arrayWithObjects:_rockSongArray, _popSongArray, nil];
@@ -90,9 +98,11 @@
     else {
         
         [UIView animateWithDuration:0.3 animations:^{
+            
             self.navigationItem.leftBarButtonItem.title = @"Cover Flow";
             [self.collectionView setCollectionViewLayout:smallLayout];
             [self.collectionView layoutIfNeeded];
+            
         }];
     
     
@@ -118,8 +128,7 @@
 #pragma mark - Table View
 -(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionReusableView *reusuableView = nil;
-    NSString *headerText = nil;
+    
     
     if (kind == UICollectionElementKindSectionHeader) {
         SongHeaderViewCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];

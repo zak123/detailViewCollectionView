@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Song.h"
+#import "iCarousel.h"
 
 @interface MasterViewController : UICollectionViewController
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *changeView;

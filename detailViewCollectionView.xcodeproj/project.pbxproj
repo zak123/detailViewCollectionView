@@ -18,6 +18,7 @@
 		B6E345531AC7CA7800C8A64B /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E345521AC7CA7800C8A64B /* Song.m */; };
 		B6E345561AC7D14F00C8A64B /* SongCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E345551AC7D14F00C8A64B /* SongCollectionViewCell.m */; };
 		B6E3455F1AC7F69600C8A64B /* SongHeaderViewCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E3455E1AC7F69600C8A64B /* SongHeaderViewCollectionReusableView.m */; };
+		B6E345621AC8051E00C8A64B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E345611AC8051E00C8A64B /* iCarousel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		B6E345551AC7D14F00C8A64B /* SongCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCollectionViewCell.m; sourceTree = "<group>"; };
 		B6E3455D1AC7F69600C8A64B /* SongHeaderViewCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongHeaderViewCollectionReusableView.h; sourceTree = "<group>"; };
 		B6E3455E1AC7F69600C8A64B /* SongHeaderViewCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongHeaderViewCollectionReusableView.m; sourceTree = "<group>"; };
+		B6E345601AC8051E00C8A64B /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		B6E345611AC8051E00C8A64B /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				B6E3452D1AC7C99500C8A64B /* AppDelegate.m */,
 				B6E3452F1AC7C99500C8A64B /* MasterViewController.h */,
 				B6E345301AC7C99500C8A64B /* MasterViewController.m */,
+				B6E345601AC8051E00C8A64B /* iCarousel.h */,
+				B6E345611AC8051E00C8A64B /* iCarousel.m */,
 				B6E3455D1AC7F69600C8A64B /* SongHeaderViewCollectionReusableView.h */,
 				B6E3455E1AC7F69600C8A64B /* SongHeaderViewCollectionReusableView.m */,
 				B6E345541AC7D14F00C8A64B /* SongCollectionViewCell.h */,
@@ -244,6 +249,7 @@
 				B6E3455F1AC7F69600C8A64B /* SongHeaderViewCollectionReusableView.m in Sources */,
 				B6E345311AC7C99500C8A64B /* MasterViewController.m in Sources */,
 				B6E345561AC7D14F00C8A64B /* SongCollectionViewCell.m in Sources */,
+				B6E345621AC8051E00C8A64B /* iCarousel.m in Sources */,
 				B6E3452B1AC7C99500C8A64B /* main.m in Sources */,
 				B6E345341AC7C99500C8A64B /* DetailViewController.m in Sources */,
 			);
